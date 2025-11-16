@@ -204,7 +204,7 @@ const Page = () => {
           <h2 className="text-4xl font-bold mb-12 text-[#1A202C]">
             Technologies{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#57007B] to-[#F76680]">
-              We Work With
+              We Work With.
             </span>
           </h2>
 
