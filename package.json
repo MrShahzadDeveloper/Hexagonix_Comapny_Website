@@ -21,10 +21,13 @@
     "react-icons": "^5.5.0",
     "react-intersection-observer": "^9.16.0",
     "react-multi-carousel": "^2.8.6",
+    "react-slick": "^0.31.0",
+    "slick-carousel": "^1.8.1",
     "swiper": "^11.2.10"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
+    "@tailwindcss/line-clamp": "^0.4.4",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",

@@ -1,104 +1,175 @@
 "use client";
-import React, { useState } from "react";
-import Image from "next/image";
 
-// ✅ Imported backend logos
-import go from "../assets/go.png";
-import java from "../assets/java.png";
-import mongodb from "../assets/mongodb.png";
-import mysql from "../assets/mysql.png";
-import netcore from "../assets/netcore.png";
-import nodejs from "../assets/nodejs.png";
-import php from "../assets/php.png";
-import python from "../assets/python.png";
-import rubyonrails from "../assets/rubyonrails.png";
-// ✅ Imported frontend logos
-import html from "../assets/html.png";
-import css from "../assets/css.png";
-import js from "../assets/js.png"
-import react from "../assets/react.png"
-import nextjs from "../assets/nextjs.png";
-import tailwindcss from "../assets/tailwind.png";
-import bootstrap from "../assets/Bootstrap.png";
-import angular from "../assets/angilar.png";
-import vue from "../assets/Vue.png";
+import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import { DiJava } from "react-icons/di";
 
-const techStackData: Record<string, { name: string; logo: any }[]> = {
-  Backend: [
-    { name: "Node.js", logo: nodejs },
-    { name: "PHP", logo: php },
-    { name: "Java", logo: java },
-    { name: "Python", logo: python },
-    { name: "Rails", logo: rubyonrails },
-    { name: ".NET Core", logo: netcore },
-    { name: "Go", logo: go },
-  ],
-  Frontend: [
-    { name: "HTML", logo: html },
-    { name: "CSS", logo: css },
-    { name: "Javascript", logo: js },
-    { name: "React", logo: react },
-    { name: "Next Js", logo: nextjs },
-    { name: "Tailwind Css", logo: tailwindcss },
-    { name: "Bootstrap", logo: bootstrap },
-    { name: "Angular", logo: angular },
-    { name: "Vue", logo: vue },
-  ],
-  Databases: [
-    { name: "MySQL", logo: mysql },
-    { name: "MongoDB", logo: mongodb },
-  ],
-  CMS: [],
-  CloudTesting: [],
-  DevOps: [],
+import {
+  FaHtml5,
+  FaCss3Alt,
+  FaReact,
+  FaNodeJs,
+  FaPython,
+  FaAws,
+  FaGithub,
+  FaCloud,
+  FaMobileAlt,
+  FaGitAlt,
+} from "react-icons/fa";
+import {
+  SiNextdotjs,
+  SiTailwindcss,
+  SiFramer,
+  SiRedux,
+  SiJavascript,
+  SiTypescript,
+  SiExpress,
+  SiMongodb,
+  SiPostgresql,
+  SiMysql,
+  SiPrisma,
+  SiSupabase,
+  SiDjango,
+  SiFirebase,
+  SiVercel,
+  SiDocker,
+  SiKubernetes,
+  SiExpo,
+  SiGraphql,
+  SiNginx,
+  SiPostman,
+  SiFigma,
+  SiJira,
+  SiWebpack,
+  SiBabel,
+} from "react-icons/si";
+
+// Motion variants
+const cardVariants = {
+  initial: { opacity: 0, y: 0 },
+  animate: { opacity: 1, y: 0 },
 };
 
 const OutTechStackSection = () => {
-  const [activeTab, setActiveTab] =
-    useState<keyof typeof techStackData>("Backend");
+  const [mounted, setMounted] = useState(false);
+  const [activeTab, setActiveTab] = useState<
+    "Front-End" | "Back-End" | "DevOps / Cloud" | "Mobile / Cross-Platform" | "Other Tools"
+  >("Front-End");
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const techStackData = {
+    "Front-End": [
+      { icon: <FaHtml5 />, name: "HTML5" },
+      { icon: <FaCss3Alt />, name: "CSS3" },
+      { icon: <FaReact />, name: "React" },
+      { icon: <SiNextdotjs />, name: "Next.js" },
+      { icon: <SiTailwindcss />, name: "Tailwind CSS" },
+      { icon: <SiFramer />, name: "Framer Motion" },
+      { icon: <SiRedux />, name: "Redux" },
+      { icon: <SiJavascript />, name: "JavaScript" },
+      { icon: <SiTypescript />, name: "TypeScript" },
+      { icon: <SiVercel />, name: "Vercel" },
+      { icon: <SiWebpack />, name: "Webpack" },
+      { icon: <SiBabel />, name: "Babel" },
+    ],
+    "Back-End": [
+      { icon: <FaNodeJs />, name: "Node.js" },
+      { icon: <SiExpress />, name: "Express.js" },
+      { icon: <SiMongodb />, name: "MongoDB" },
+      { icon: <SiPostgresql />, name: "PostgreSQL" },
+      { icon: <SiMysql />, name: "MySQL" },
+      { icon: <SiPrisma />, name: "Prisma" },
+      { icon: <SiSupabase />, name: "Supabase" },
+      { icon: <FaPython />, name: "Python" },
+      { icon: <SiDjango />, name: "Django" },
+      { icon: <SiFirebase />, name: "Firebase" },
+      { icon: <SiGraphql />, name: "GraphQL" },
+      { icon: <DiJava />, name: "Java" },
+    ],
+    "DevOps / Cloud": [
+      { icon: <FaAws />, name: "AWS" },
+      { icon: <SiDocker />, name: "Docker" },
+      { icon: <SiKubernetes />, name: "Kubernetes" },
+      { icon: <SiNginx />, name: "Nginx" },
+      { icon: <FaCloud />, name: "Cloudflare" },
+      { icon: <SiFirebase />, name: "Firebase" },
+    ],
+    "Mobile / Cross-Platform": [
+      { icon: <SiExpo />, name: "React Native / Expo" },
+      { icon: <FaMobileAlt />, name: "Mobile Apps" },
+      { icon: <FaReact />, name: "React" },
+      { icon: <SiRedux />, name: "Redux" },
+      { icon: <SiTypescript />, name: "TypeScript" },
+      { icon: <SiFirebase />, name: "Firebase" },
+    ],
+    "Other Tools": [
+      { icon: <FaGitAlt />, name: "Git" },
+      { icon: <FaGithub />, name: "GitHub" },
+      { icon: <SiPostman />, name: "Postman" },
+      { icon: <SiFigma />, name: "Figma" },
+      { icon: <SiJira />, name: "Jira" },
+      { icon: <SiVercel />, name: "Vercel" },
+    ],
+  };
+
+  if (!mounted) return null;
 
   return (
-    <section className="mt-20  border-b flex flex-col justify-center items-center border-[#E7DAED] pb-20">
-      {/* Heading */}
-      <div className="flex flex-col justify-center items-center text-center">
-        <hr className="w-16 border-2 h-2 bg-gradient-to-tr from-[#57007B] to-[#F76680] mb-4 sm:mb-6" />
-        <h1 className="text-2xl sm:text-3xl md:text-4xl">
-          Our <br /> <strong>Tech Stack</strong>
-        </h1>
-      </div>
+    <section className="py-24 px-4 md:px-10 lg:px-28 bg-white border-t border-[#E7DAED]">
+      <div className="max-w-7xl mx-auto text-center">
+        <h2 className="text-4xl font-bold mb-8 text-[#1A202C]">
+          Our{" "}
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#57007B] to-[#F76680]">
+            Tech Stack
+          </span>
+        </h2>
 
-      {/* Tabs */}
-      <div className="flex justify-center gap-8 mt-6 flex-wrap">
-        {Object.keys(techStackData).map((tab) => (
-          <button
-            key={tab}
-            onClick={() => setActiveTab(tab as keyof typeof techStackData)}
-            className={`flex flex-col items-center text-lg ${
-              activeTab === tab
-                ? "bg-gradient-to-r from-[#57007B] to-[#F76680] bg-clip-text text-transparent font-semibold "
-                : "text-gray-700"
-            }`}
-          >
-            {tab}
-            {activeTab === tab && (
-              <hr className="w-8 h-1 bg-gradient-to-tr from-[#57007B] to-[#F76680] mt-2 rounded-full" />
-            )}
-          </button>
-        ))}
-      </div>
+        {/* Tabs */}
+        <div className="flex flex-wrap justify-center mb-12 gap-4">
+          {Object.keys(techStackData).map((tab) => (
+            <button
+              key={tab}
+              onClick={() => setActiveTab(tab as keyof typeof techStackData)}
+              className={`px-6 py-2 rounded-full font-medium transition-all ${
+                activeTab === tab
+                  ? "bg-gradient-to-r from-[#57007B] to-[#F76680] text-white"
+                  : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+              }`}
+            >
+              {tab}
+            </button>
+          ))}
+        </div>
 
-      {/* Logos */}
-      <div className="mt-16 max-w-7xl flex justify-center items-center gap-6 flex-wrap">
-        {techStackData[activeTab].map((tech) => (
-          <div
-            key={tech.name}
-            className="flex flex-col items-center justify-center"
-          >
-            <Image src={tech.logo} alt={tech.name} width={224} height={4} />
+        {/* Icons Grid */}
+        <div className="flex justify-center">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-8 place-items-center">
+            {techStackData[activeTab].map((tech) => (
+              <motion.div
+                key={tech.name}
+                initial="initial"
+                animate="animate"
+                variants={cardVariants}
+                whileHover={{
+                  scale: 1.12,
+                  rotate: 3,
+                  y: -5,
+                  boxShadow: "0px 12px 24px rgba(87, 0, 123, 0.25)",
+                }}
+                transition={{ type: "spring", stiffness: 200, damping: 12 }}
+                className="flex flex-col items-center justify-center p-5 bg-[#F8F7FC] rounded-2xl shadow-sm hover:shadow-lg border border-[#E7DAED] w-32 h-32"
+              >
+                <div className="text-4xl text-[#57007B] mb-2">{tech.icon}</div>
+                <p className="text-sm font-medium text-[#4A5568]">{tech.name}</p>
+              </motion.div>
+            ))}
           </div>
-        ))}
+        </div>
       </div>
-    </section> 
+    </section>
   );
 };
 

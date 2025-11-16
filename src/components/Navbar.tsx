@@ -62,11 +62,14 @@ const Navbar = () => {
         </div>
 
         {/* Contact Button (desktop) */}
-        <div className="hidden md:block">
-          <button className="py-2 px-6 bg-gradient-to-tr from-[#57007B] to-[#6675F7] text-white rounded-md hover:opacity-90 transition">
-            Contact us
-          </button>
+       <div className="hidden md:block">
+          <Link href="/contact">
+         <button className="py-2 px-6 bg-gradient-to-tr from-[#57007B] to-[#6675F7] text-white rounded-md hover:opacity-90 transition">
+          Contact us
+        </button>
+           </Link>
         </div>
+
 
         {/* Mobile Menu Toggle */}
         <button
