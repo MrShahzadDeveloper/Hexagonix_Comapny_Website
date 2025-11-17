@@ -110,16 +110,16 @@ const TrustSection: React.FC = () => {
   return (
     <section
       ref={sectionRef}
-      className="xl:px-24 mx-auto px-4 sm:px-6 py-20 sm:py-32 md:py-44 min-h-[60vh] md:min-h-[70vh] grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center relative overflow-hidden"
+      className="xl:px-24 mx-auto px-4 sm:px-6 py-20 lg:py-44 min-h-[60vh] md:min-h-[70vh] grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center relative overflow-hidden"
     >
       {/* Left */}
       <div>
         <hr className="trust-hr w-16 border-2 h-2 bg-gradient-to-tr from-[#57007B] to-[#F76680] mb-4 sm:mb-6" />
-        <h1 className="trust-heading text-2xl sm:text-3xl md:text-4xl leading-snug mb-6 sm:mb-10">
-          <span>Leading companies trust us</span> <br />
+        <h1 className="trust-heading text-2xl sm:text-3xl lg:text-4xl leading-snug mb-6 sm:mb-10">
+          <span>Leading companies trust us </span>
           <span className="text-black font-bold">to develop software</span>
         </h1>
-        <p className="trust-para text-gray-600 mb-6 sm:mb-10 max-w-md text-sm sm:text-base">
+        <p className="trust-para text-gray-600 mb-6 sm:mb-10 max-w-md text-sm lg:text-base">
           We <span className="text-pink-600">add development capacity</span> to
           tech teams. Our value isn’t limited to building teams but is equally
           distributed across the project lifecycle. We are a custom software

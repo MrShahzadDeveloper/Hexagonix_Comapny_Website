@@ -146,7 +146,7 @@ const OutTechStackSection = () => {
 
         {/* Icons Grid */}
         <div className="flex justify-center">
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-8 place-items-center">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8 place-items-center">
             {techStackData[activeTab].map((tech) => (
               <motion.div
                 key={tech.name}

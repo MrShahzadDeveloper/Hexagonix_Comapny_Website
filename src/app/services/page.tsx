@@ -210,7 +210,7 @@ const Page = () => {
 
           <motion.div
             variants={containerVariants}
-            className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-8 place-items-center"
+            className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-8 place-items-center"
           >
             {[
               { icon: <FaHtml5 />, name: "HTML5" },
@@ -266,69 +266,73 @@ const Page = () => {
         </motion.div>
       </section>
 
-      {/* 🌍 INDUSTRIES WE SERVE */}
-      <section className="bg-gray-50 py-24 px-4 md:px-10 lg:px-28">
-        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.8 }}
-          >
-            <h2 className="text-4xl font-bold mb-6">
-              <span className="bg-gradient-to-r from-[#57007B] to-[#F76680] bg-clip-text text-transparent">
-                Industries We Serve
-              </span>
-            </h2>
-            <p className="text-gray-600 text-lg leading-relaxed">
-              We collaborate with forward-thinking companies across industries,
-              delivering technology that accelerates business growth.
-            </p>
-          </motion.div>
+   {/* 🌍 INDUSTRIES WE SERVE */}
+<section className="bg-gray-50 py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-10 xl:px-24">
+  <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 lg:gap-12 items-start">
+    {/* Left Text Block */}
+    <motion.div
+      initial={{ opacity: 0, x: -30 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.8 }}
+      className="text-center md:text-left space-y-4 sm:space-y-6"
+    >
+      <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold">
+        <span className="bg-gradient-to-r from-[#57007B] to-[#F76680] bg-clip-text text-transparent">
+          Industries We Serve
+        </span>
+      </h2>
+      <p className="text-gray-600 text-base sm:text-lg leading-relaxed max-w-xl mx-auto md:mx-0">
+        We collaborate with forward-thinking companies across industries,
+        delivering technology that accelerates business growth.
+      </p>
+    </motion.div>
 
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
-            className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8"
-          >
-            {[
-              {
-                icon: <FaReact className="text-[#57007B] text-3xl" />,
-                title: "E-commerce",
-              },
-              {
-                icon: <FaMobileAlt className="text-[#F76680] text-3xl" />,
-                title: "Healthcare",
-              },
-              {
-                icon: <FaLaptopCode className="text-[#7B2CBF] text-3xl" />,
-                title: "Education",
-              },
-            ].map((item, i) => (
-              <motion.div
-                key={i}
-                variants={cardVariants}
-                whileHover={{
-                  scale: 1.08,
-                  y: -5,
-                  boxShadow: "0px 10px 20px rgba(87,0,123,0.2)",
-                }}
-                transition={{ duration: 0.3 }}
-                className="p-6 bg-white rounded-2xl border border-gray-100 shadow-md flex flex-col items-center text-center"
-              >
-                <div className="w-14 h-14 mb-4 rounded-full bg-gradient-to-tr from-[#57007B] to-[#F76680] flex items-center justify-center text-white">
-                  {item.icon}
-                </div>
-                <h3 className="text-lg font-semibold text-[#57007B]">
-                  {item.title}
-                </h3>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
+    {/* Right Cards Grid */}
+    <motion.div
+      variants={containerVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }}
+      className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"
+    >
+      {[
+        {
+          icon: <FaReact className="text-[#57007B] text-2xl sm:text-3xl" />,
+          title: "E-commerce",
+        },
+        {
+          icon: <FaMobileAlt className="text-[#F76680] text-2xl sm:text-3xl" />,
+          title: "Healthcare",
+        },
+        {
+          icon: <FaLaptopCode className="text-[#7B2CBF] text-2xl sm:text-3xl" />,
+          title: "Education",
+        },
+      ].map((item, i) => (
+        <motion.div
+          key={i}
+          variants={cardVariants}
+          whileHover={{
+            scale: 1.05,
+            y: -4,
+            boxShadow: "0px 10px 20px rgba(87,0,123,0.2)",
+          }}
+          transition={{ duration: 0.25 }}
+          className="p-5 sm:p-6 bg-white rounded-2xl border border-gray-100 shadow-md flex flex-col items-center text-center"
+        >
+          <div className="w-12 h-12 sm:w-14 sm:h-14 mb-4 rounded-full bg-gradient-to-tr from-[#57007B] to-[#F76680] flex items-center justify-center text-white">
+            {item.icon}
+          </div>
+          <h3 className="text-base sm:text-lg font-semibold text-[#57007B]">
+            {item.title}
+          </h3>
+        </motion.div>
+      ))}
+    </motion.div>
+  </div>
+</section>
+
 
       {/* 💎 WHY CHOOSE US */}
       <section className="py-24 bg-gradient-to-tr from-[#57007B] via-[#7B2CBF] to-[#F76680] text-white text-center px-4 md:px-10 lg:px-28">
