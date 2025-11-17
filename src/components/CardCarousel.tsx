@@ -96,7 +96,7 @@ export default function CardCarousel() {
           ></div>
 
           {/* Fraction + progress on right side */}
-          <div className="ml-6 flex items-center justify-end gap-4 text-[#57007B]">
+          <div className="ml-6 hidden md:flex items-center justify-end gap-4 text-[#57007B] ">
             <span className="custom-fraction-current text-lg font-semibold">
               {currentIndex.toString().padStart(2, "0")}
             </span>

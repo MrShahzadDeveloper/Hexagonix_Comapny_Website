@@ -6,7 +6,7 @@ import { FaBriefcase, FaClock, FaEnvelopeOpenText } from "react-icons/fa";
 
 const HirePage = () => {
   return (
-    <section className="relative bg-gradient-to-tr from-[#57007B] via-[#7B2CBF] to-[#F76680] min-h-screen flex flex-col items-center justify-center text-center text-white px-6 sm:px-10">
+    <section className="relative py-6 bg-gradient-to-tr from-[#57007B] via-[#7B2CBF] to-[#F76680] min-h-screen flex flex-col items-center justify-center text-center text-white px-6 sm:px-10">
       {/* Background glow */}
       <div className="absolute top-10 left-10 w-72 h-72 bg-white/10 rounded-full blur-3xl -z-10"></div>
       <div className="absolute bottom-10 right-10 w-96 h-96 bg-pink-400/10 rounded-full blur-3xl -z-10"></div>
